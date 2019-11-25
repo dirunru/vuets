@@ -2,15 +2,21 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>{{count}}</h2>
-    <button @click="addCount()">点击加一</button>
+    <Button type="default" @click="addCount">点击加一</Button>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component,Vue,Prop} from "vue-property-decorator";
+import {Button} from "element-ui";
+
 
 // 装饰器
-@Component
+@Component({
+  components: {
+    Button
+  }
+})
 export default class HelloWorld extends Vue {
   data(){
     return {
